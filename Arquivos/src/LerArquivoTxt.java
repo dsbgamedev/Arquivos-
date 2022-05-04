@@ -56,7 +56,6 @@ public class LerArquivoTxt {
 			
 			pessoas.add(pessoa);
 			
-			
 		}
 	
 		entrada.close();/*Terminou de ler o arquivo exel*/
