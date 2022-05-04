@@ -60,7 +60,7 @@ public class LerArquivoTxt {
 	
 		entrada.close();/*Terminou de ler o arquivo exel*/
 		
-		for (Pessoa pessoa : pessoas) {
+		for (Pessoa pessoa : pessoas) {//Com a lista pode gravar no banco de dados
 			System.out.println(pessoa);
 		}
 	
