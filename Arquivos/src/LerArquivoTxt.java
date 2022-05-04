@@ -1,11 +1,11 @@
-import java.io.File;
+//import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -43,11 +43,11 @@ public class LerArquivoTxt {
 					break;
 					
 				case 1:
-					pessoa.setIdade(Double.valueOf(cell.getNumericCellValue()).intValue());
+					pessoa.setEmail(cell.getStringCellValue());
 					break;
 					
 				case 2:
-					pessoa.setEmail(cell.getStringCellValue());
+					pessoa.setIdade(Double.valueOf(cell.getNumericCellValue()).intValue());
 					break;
 				}/* Fim da celulas na linha */
 				
