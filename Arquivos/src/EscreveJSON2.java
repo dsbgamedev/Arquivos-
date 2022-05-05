@@ -1,7 +1,14 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class EscreveJSON2 {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		Usuario usuario1 = new Usuario();
 		usuario1.setCpf("25652456");
@@ -14,6 +21,22 @@ public class EscreveJSON2 {
 		usuario2.setNome("Userrr");
 		usuario2.setSenha("123456");
 		usuario2.setLogin("user");
+		
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		usuarios.add(usuario1);
+		usuarios.add(usuario2);
+		
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();//E somente para organizar o codigo
+		
+		String jsonUser= gson.toJson(usuarios);
+		
+		System.out.println(jsonUser);
+		
+		FileWriter fileWriter = new FileWriter("C:\\Users\\Douglas\\git\\repository4\\Arquivos\\filjson.json");
+		
+		fileWriter.write(jsonUser);
+		fileWriter.flush();
+		fileWriter.close();
 		
 	}
 
