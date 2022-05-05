@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -5,6 +6,9 @@ import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 public class EscreveJSON2 {
 	
@@ -38,6 +42,22 @@ public class EscreveJSON2 {
 		fileWriter.flush();
 		fileWriter.close();
 		
+		//**************** LENDO ARQUIVO JSON *********************//
+		
+		FileReader fileReader = new FileReader("C:\\Users\\Douglas\\git\\repository4\\Arquivos\\filjson.json");
+		
+		JsonArray jsonArray = (JsonArray) JsonParser.parseReader(fileReader);
+	
+		List<Usuario> listUsuario = new ArrayList<Usuario>();
+		
+		for (JsonElement jsonElement : jsonArray) {
+			
+			Usuario usuario = new Gson().fromJson(jsonElement, Usuario.class);
+			listUsuario.add(usuario);		
+		}
+		
+		System.out.println("leitura arquivo texto" + listUsuario);
+			
 	}
 
 }
